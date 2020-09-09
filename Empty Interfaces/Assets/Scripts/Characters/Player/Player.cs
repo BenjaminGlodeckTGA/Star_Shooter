@@ -5,12 +5,14 @@ using UnityEngine;
 public class Player : Character
 {
     float space;
+    public float speed = 4.0f;
 
     // Update is called once per frame
     void Update()
     {
         space = Input.GetAxisRaw("Jump");
         ShootReadyCheck();
+		Move();
     }
 
     protected override void ShootReadyCheck()
@@ -28,5 +30,9 @@ public class Player : Character
             //Debug.Log("Player cooldown: " + coolDownCopy);
             Shoot();
         }
+    }
+    public void Move()
+    {
+        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);
     }
 }
