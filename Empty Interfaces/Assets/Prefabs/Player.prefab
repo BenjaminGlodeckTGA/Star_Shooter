@@ -57,6 +57,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &1690553180671027462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113,10 +116,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8259923984661561715}
     m_Modifications:
-    - target: {fileID: 1914534284801359360, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+    - target: {fileID: 1820101396622548699, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
         type: 3}
-      propertyPath: m_Name
-      value: Weapon
+      propertyPath: m_LocalPosition.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820101396622548699, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.699
       objectReference: {fileID: 0}
     - target: {fileID: 1914534284801359356, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
         type: 3}
@@ -172,6 +180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914534284801359360, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df7e4530642ab34fb7c24fcf40d7fbc, type: 3}
