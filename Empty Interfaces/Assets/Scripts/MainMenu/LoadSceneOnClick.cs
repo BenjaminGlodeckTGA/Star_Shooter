@@ -7,6 +7,7 @@ public class LoadSceneOnClick : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
+        //Loads scene that is chosen in inspector
         SceneManager.LoadScene(sceneName);
     }
 }
