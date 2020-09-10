@@ -16,9 +16,12 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
+        // if wielder wants to shoot and is able to
         if (wielder.GetComponent<Character>().isReadyToShoot)
         {
+            // weapon fires
             Fire();
+            // wielder is no longer able to shoot
             wielder.GetComponent<Character>().isReadyToShoot = false;
         }
     }

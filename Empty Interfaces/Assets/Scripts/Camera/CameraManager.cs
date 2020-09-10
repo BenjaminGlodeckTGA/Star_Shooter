@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
+        // generates edge colliders on camera boundry
         GenerateCollidersAcrossScreen();
     }
 

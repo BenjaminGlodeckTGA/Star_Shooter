@@ -24,29 +24,33 @@ public abstract class Character : MonoBehaviour
 
     protected void CheckIfAlive()
     {
+        // if character is dead
         if (hp <= 0)
         {
+            // destroys the character
             Destroy(gameObject);
         }
     }
 
     protected virtual void ShootReadyCheck()
     {
-        timeBetweenShots -= Time.deltaTime;
+        timeBetweenShots -= Time.deltaTime; // timer is decreased
 
+        // generates a random cooldown timer based on the random modifier
         lowCoolDown = coolDownCopy - (randomModifier * coolDownCopy);
         highCoolDown = coolDownCopy + (randomModifier * coolDownCopy);
 
+        // timer cant go below 0
         if (timeBetweenShots <= 0)
         {
             timeBetweenShots = 0;
         }
 
-        if (timeBetweenShots <= 0 && isShooting)
+        // if timer is 0
+        if (timeBetweenShots <= 0)
         {
             timeBetweenShots = Random.Range(lowCoolDown, highCoolDown);
-            //.Log("Enemy: " + timeBetweenShots);
-            //Debug.Log("Enemy cooldown: " + coolDownCopy);
+            // character shoots
             Shoot();
         }
     }
@@ -58,11 +62,13 @@ public abstract class Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // if character collides with a projectile
         if (other.gameObject.CompareTag("Projectile"))
         {
+            // destroys projectile
             Destroy(other.gameObject);
+            // damages character
             hp--;
-            Debug.Log("CHARACTER HP: " + hp);
         }
     }
 

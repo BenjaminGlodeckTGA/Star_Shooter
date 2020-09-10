@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
     {
         float space = Input.GetAxisRaw("Jump");
 
+        // if space is pressed
         if (space != 0)
         {
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);

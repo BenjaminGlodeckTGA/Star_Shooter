@@ -5,22 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject player;
 
 
     public void Update()
     {
         ScreenBoundary();
 
-        if (Player.GetComponent<Player>().hp <= 0)
+        //  if player is dead
+        if (player.GetComponent<Player>().hp <= 0)
         {
+            // load game over scene
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            Destroy(player);
         }
 
     }
     public void ScreenBoundary()
     {
-        Player.transform.position = new Vector3(Mathf.Clamp(Player.transform.position.x, -Screen.width/100, Screen.width/100), Player.transform.position.y, Player.transform.position.z);
+        player.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, -Screen.width/100, Screen.width/100), player.transform.position.y, player.transform.position.z);
     }
 }
 

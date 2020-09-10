@@ -22,6 +22,5 @@ public class BulletProjectile : MonoBehaviour, IShootable
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
-        Debug.Log("Bullet destroyed");
     }
 }

@@ -11,24 +11,28 @@ public class Player : Character
     void Update()
     {
         space = Input.GetAxisRaw("Jump");
+        // checks if player can shoot
         ShootReadyCheck();
+        // moves player
 		Move();
     }
 
     protected override void ShootReadyCheck()
     {
-        timeBetweenShots -= Time.deltaTime;
+        timeBetweenShots -= Time.deltaTime; // decrease timer
 
+        // timer cant go below 0
         if (timeBetweenShots <= 0)
         {
             timeBetweenShots = 0;
         }
 
+        // if timer runs out and space is pressed
         if (timeBetweenShots <= 0 && space != 0)
         {
+            // reset timer
             timeBetweenShots = coolDownCopy;
-            //Debug.Log("Player: " + timeBetweenShots);
-            //Debug.Log("Player cooldown: " + coolDownCopy);
+            // and shoot
             Shoot();
         }
     }
