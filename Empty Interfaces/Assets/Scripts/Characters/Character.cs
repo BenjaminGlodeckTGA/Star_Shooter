@@ -6,6 +6,8 @@ public abstract class Character : MonoBehaviour
 {
     public bool isReadyToShoot = false;
     public float timeBetweenShots;
+    public int maxHP;
+    protected int hp;
     protected float lowCoolDown;
     protected float highCoolDown;
     protected float coolDownCopy;
@@ -15,6 +17,7 @@ public abstract class Character : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
+        hp = maxHP;
         coolDownCopy = timeBetweenShots;
         Debug.Log("START VALUE OF COPY = " + coolDownCopy);
     }
@@ -34,7 +37,7 @@ public abstract class Character : MonoBehaviour
         if (timeBetweenShots <= 0 && isShooting)
         {
             timeBetweenShots = Random.Range(lowCoolDown, highCoolDown);
-            Debug.Log("Enemy: " + timeBetweenShots);
+            //.Log("Enemy: " + timeBetweenShots);
             //Debug.Log("Enemy cooldown: " + coolDownCopy);
             Shoot();
         }
@@ -44,4 +47,15 @@ public abstract class Character : MonoBehaviour
     {
         isReadyToShoot = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(other);
+            hp--;
+            Debug.Log("CHARACTER HP: " + hp);
+        }
+    }
+
 }
