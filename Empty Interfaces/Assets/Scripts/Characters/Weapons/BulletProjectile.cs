@@ -16,16 +16,6 @@ public class BulletProjectile : MonoBehaviour, IShootable
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
         
-=======
-
-    }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-        //Debug.Log("Bullet destroyed");
->>>>>>> Stashed changes
     }
 }

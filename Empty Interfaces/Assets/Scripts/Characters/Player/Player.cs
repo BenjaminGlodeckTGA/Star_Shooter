@@ -27,7 +27,7 @@ public class Player : Character
         if (timeBetweenShots <= 0 && space != 0)
         {
             timeBetweenShots = coolDownCopy;
-            //Debug.Log("Player: " + timeBetweenShots);
+            Debug.Log("Player: " + timeBetweenShots);
             //Debug.Log("Player cooldown: " + coolDownCopy);
             Shoot();
         }
