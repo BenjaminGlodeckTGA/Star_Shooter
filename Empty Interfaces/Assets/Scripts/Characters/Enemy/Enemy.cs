@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    private void Update()
-    {
     public float maxAcceleration;
     public float maxVelocity;
 
@@ -34,10 +32,12 @@ public class Enemy : Character
     public Vector3 acceleration;
 
     
-    public void Start()
+    public override void Start()
     {
         position = transform.position;
         velocity = new Vector3(0, 0, 0);
+        hp = maxHP;
+        coolDownCopy = timeBetweenShots;
     }
 
     public void Update()
@@ -48,6 +48,8 @@ public class Enemy : Character
         velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
         position = position + velocity * Time.deltaTime;
         transform.position = position;
+        ShootReadyCheck();
+        CheckIfAlive();
     }
 
     protected Vector3 TowardsPlayer()

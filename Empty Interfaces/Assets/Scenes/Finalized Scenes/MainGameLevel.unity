@@ -137,19 +137,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392592964753965578, guid: 4f1f47780f5c7834eb3aedf197e70148,
         type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 527590865}
-    - target: {fileID: 4392592964753965578, guid: 4f1f47780f5c7834eb3aedf197e70148,
-        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 878810031}
-    - target: {fileID: 4392592964753965578, guid: 4f1f47780f5c7834eb3aedf197e70148,
-        type: 3}
-      propertyPath: killsToWin
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6567517362940033513, guid: 4f1f47780f5c7834eb3aedf197e70148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -278,11 +268,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9156909549487010681, guid: 589aa5b0ec60ef442b62e0397849b56b,
-        type: 3}
-      propertyPath: timeBetweenShots
-      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589aa5b0ec60ef442b62e0397849b56b, type: 3}
@@ -416,6 +401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShipEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867992249703759670, guid: bc946ea00f168934786ae1263ee83c59,
+        type: 3}
+      propertyPath: isReadyToShoot
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
         type: 3}

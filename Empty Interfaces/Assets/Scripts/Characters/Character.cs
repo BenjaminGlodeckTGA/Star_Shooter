@@ -16,8 +16,9 @@ public abstract class Character : MonoBehaviour
     protected static int kills;
 
     // Start is called before the first frame update
-    protected void Start()
+    public virtual void Start()
     {
+        kills = 0;
         hp = maxHP;
         coolDownCopy = timeBetweenShots;
         Debug.Log("START VALUE OF COPY = " + coolDownCopy);
