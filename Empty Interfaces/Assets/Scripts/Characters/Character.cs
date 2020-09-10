@@ -7,7 +7,7 @@ public abstract class Character : MonoBehaviour
     public bool isReadyToShoot = false;
     public float timeBetweenShots;
     public int maxHP;
-    protected int hp;
+    public int hp;
     protected float lowCoolDown;
     protected float highCoolDown;
     protected float coolDownCopy;
