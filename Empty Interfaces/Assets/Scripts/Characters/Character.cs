@@ -52,7 +52,7 @@ public abstract class Character : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Projectile"))
         {
-            Destroy(other);
+            Destroy(other.gameObject);
             hp--;
             Debug.Log("CHARACTER HP: " + hp);
         }
