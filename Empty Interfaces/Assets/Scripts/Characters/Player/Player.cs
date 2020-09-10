@@ -25,16 +25,8 @@ public class Player : Character
         if (timeBetweenShots <= 0 && space != 0)
         {
             timeBetweenShots = coolDownCopy;
-            Debug.Log("Player cooldown: " + timeBetweenShots);
+            //Debug.Log("Player cooldown: " + coolDownCopy);
             Shoot();
         }
     }
-<<<<<<< Updated upstream
-=======
-
-    public void Move()
-    {
-        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);
-    }
->>>>>>> Stashed changes
 }
