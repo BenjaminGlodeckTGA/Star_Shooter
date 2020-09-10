@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReadyToShoot: 0
   timeBetweenShots: 1
+  coolDownRandomRangeValue: 0.25
 --- !u!1001 &6256465325381307305
 PrefabInstance:
   m_ObjectHideFlags: 0
