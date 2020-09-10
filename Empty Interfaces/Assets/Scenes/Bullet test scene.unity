@@ -140,6 +140,7 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 527590865}
+      objectReference: {fileID: 878810031}
     - target: {fileID: 6567517362940033513, guid: 4f1f47780f5c7834eb3aedf197e70148,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -218,11 +219,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.25
+      value: -1.46
       objectReference: {fileID: 0}
     - target: {fileID: 8259923984661561715, guid: 589aa5b0ec60ef442b62e0397849b56b,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.89
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8259923984661561715, guid: 589aa5b0ec60ef442b62e0397849b56b,
         type: 3}
@@ -243,11 +246,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      value: -0.429014
       objectReference: {fileID: 0}
     - target: {fileID: 8259923984661561715, guid: 589aa5b0ec60ef442b62e0397849b56b,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+      value: 0.90329784
       objectReference: {fileID: 0}
     - target: {fileID: 8259923984661561715, guid: 589aa5b0ec60ef442b62e0397849b56b,
         type: 3}
@@ -277,6 +282,11 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589aa5b0ec60ef442b62e0397849b56b, type: 3}
 --- !u!1 &527590865 stripped
+      value: -50.81
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 589aa5b0ec60ef442b62e0397849b56b, type: 3}
+--- !u!1 &878810031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5296827836066211147, guid: 589aa5b0ec60ef442b62e0397849b56b,
     type: 3}
@@ -376,11 +386,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShipEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3867992249703759670, guid: bc946ea00f168934786ae1263ee83c59,
-        type: 3}
-      propertyPath: timeBetweenShots
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
         type: 3}

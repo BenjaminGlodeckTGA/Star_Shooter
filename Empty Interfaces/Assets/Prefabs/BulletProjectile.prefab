@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 9047077596336202326}
   - component: {fileID: 5431958323871469948}
   - component: {fileID: 2683597874841292916}
+  - component: {fileID: 4162783752854822162}
   m_Layer: 0
   m_Name: BulletProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +122,7 @@ MonoBehaviour:
   bulletSpeed: 500
   destroyTimerInSeconds: 2
 --- !u!58 &2683597874841292916
+--- !u!58 &4162783752854822162
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +133,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
