@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 3867992249703759670}
   - component: {fileID: 1453029865565247879}
   - component: {fileID: 8880025990691290609}
+  - component: {fileID: 7803828752997042730}
+  - component: {fileID: 1280044155343719114}
   m_Layer: 0
   m_Name: ShipEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +127,34 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3639943855346603852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 054e268cc6afa1941ad86a6f049eb2c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAcceleration: 1
+  maxVelocity: 2
+  playerTarget: {x: 0, y: 0, z: 0}
+  playerTargetPriority: 80
+  cohesionRadius: 200
+  cohesionPriority: 60
+  alignmentRadius: 0
+  alignmentPriority: 0
+  seperationRadius: 0
+  seperationPriority: 0
+  avoidanceRadius: 0
+  avoidancePriority: 0
+  position: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  acceleration: {x: 0, y: 0, z: 0}
+--- !u!50 &7803828752997042730
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639943855346603852}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -138,6 +168,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!58 &1280044155343719114
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639943855346603852}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!1001 &6256465325381307305
 PrefabInstance:
   m_ObjectHideFlags: 0
