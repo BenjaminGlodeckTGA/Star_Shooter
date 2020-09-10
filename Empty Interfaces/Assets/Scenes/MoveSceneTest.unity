@@ -204,7 +204,6 @@ GameObject:
   - component: {fileID: 637717079}
   - component: {fileID: 637717078}
   - component: {fileID: 637717077}
-  - component: {fileID: 637717080}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -277,19 +276,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &637717080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637717076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c4a25637f52644bfa2281b74b0f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 637717078}
 --- !u!1001 &1642952301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +287,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShipEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867992249703759670, guid: bc946ea00f168934786ae1263ee83c59,
+        type: 3}
+      propertyPath: randomModifier
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867992249703759670, guid: bc946ea00f168934786ae1263ee83c59,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
         type: 3}
@@ -431,6 +427,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8375905574052632943, guid: 4f1f47780f5c7834eb3aedf197e70148,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 637717078}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1f47780f5c7834eb3aedf197e70148, type: 3}
 --- !u!1 &1984926041 stripped

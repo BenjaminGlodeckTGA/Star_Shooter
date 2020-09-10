@@ -6,8 +6,11 @@ public abstract class Character : MonoBehaviour
 {
     public bool isReadyToShoot = false;
     public float timeBetweenShots;
+    protected float lowCoolDown;
+    protected float highCoolDown;
     protected float coolDownCopy;
     protected bool isShooting = true;
+    public float randomModifier;
 
     // Start is called before the first frame update
     protected void Start()
@@ -20,6 +23,9 @@ public abstract class Character : MonoBehaviour
     {
         timeBetweenShots -= Time.deltaTime;
 
+        lowCoolDown = coolDownCopy - (randomModifier * coolDownCopy);
+        highCoolDown = coolDownCopy + (randomModifier * coolDownCopy);
+
         if (timeBetweenShots <= 0)
         {
             timeBetweenShots = 0;
@@ -27,7 +33,8 @@ public abstract class Character : MonoBehaviour
 
         if (timeBetweenShots <= 0 && isShooting)
         {
-            timeBetweenShots = coolDownCopy;
+            timeBetweenShots = Random.Range(lowCoolDown, highCoolDown);
+            Debug.Log("Enemy: " + timeBetweenShots);
             //Debug.Log("Enemy cooldown: " + coolDownCopy);
             Shoot();
         }
