@@ -5,24 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 2d5291571d1fc5e41a8b67123202eb5f
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9b63bd02e23d5ab4391857dd6de351be
-  - enabled: 1
-    path: Assets/Scenes/Bullet test scene.unity
-    guid: e995e66c80a3bc24cb940a85d42f7f6f
-
-    path: Assets/Scenes/MoveSceneTest.unity
-    guid: 0c2f67d891eab094b91e0309cdb3e4b2
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: e7077d8e8c737d94197cea32ba07d7fc
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 9b63bd02e23d5ab4391857dd6de351be
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-
+    path: Assets/Scenes/Bullet test scene.unity
+    guid: e995e66c80a3bc24cb940a85d42f7f6f
   m_configObjects: {}

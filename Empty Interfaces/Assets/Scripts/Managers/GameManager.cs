@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
-
+    public int killsToWin;
 
     public void Update()
     {
@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
             // load game over scene
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
             Destroy(player);
+        }
+
+        if (player.GetComponent<Player>().GetKills() >= killsToWin)
+        {
+            SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
         }
 
     }

@@ -13,6 +13,7 @@ public abstract class Character : MonoBehaviour
     protected float coolDownCopy;
     protected bool isShooting = true;
     public float randomModifier;
+    protected static int kills;
 
     // Start is called before the first frame update
     protected void Start()
@@ -29,7 +30,13 @@ public abstract class Character : MonoBehaviour
         {
             // destroys the character
             Destroy(gameObject);
+            kills++;
         }
+    }
+
+    public int GetKills()
+    {
+        return kills;
     }
 
     protected virtual void ShootReadyCheck()
