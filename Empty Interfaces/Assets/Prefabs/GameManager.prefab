@@ -56,3 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc135ddfffb7f48930cb98661d47af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipEnemyPrefab: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
+    type: 3}
+  numberOfEnemies: 0
+  spawnRadius: 20
+  bounds: 20
+  enemies: []
