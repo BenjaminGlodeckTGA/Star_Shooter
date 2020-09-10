@@ -38,6 +38,7 @@ public class Player : Character
     }
     public void Move()
     {
+        //Makes Character move with key arrows
         transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);
     }
 }

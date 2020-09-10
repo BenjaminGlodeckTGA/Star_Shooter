@@ -6,6 +6,7 @@ public class ExitOnClick : MonoBehaviour
 {
     public void ExitGame()
     {
+        //Application quits when Exit game is pressed
         Application.Quit();
     }
 
