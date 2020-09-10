@@ -22,6 +22,14 @@ public abstract class Character : MonoBehaviour
         Debug.Log("START VALUE OF COPY = " + coolDownCopy);
     }
 
+    protected void CheckIfAlive()
+    {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     protected virtual void ShootReadyCheck()
     {
         timeBetweenShots -= Time.deltaTime;
