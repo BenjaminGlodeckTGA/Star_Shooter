@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8153944048791171119}
   - component: {fileID: 2115219887218394903}
   - component: {fileID: 8927640764797715554}
-  - component: {fileID: 6893633729673456007}
   - component: {fileID: 3867992249703759670}
+  - component: {fileID: 1453029865565247879}
+  - component: {fileID: 8880025990691290609}
   m_Layer: 0
   m_Name: ShipEnemy
   m_TagString: Untagged
@@ -84,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6893633729673456007
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3639943855346603852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3867992249703759670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +99,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReadyToShoot: 0
   timeBetweenShots: 1
+  maxHP: 3
+  randomModifier: 0.25
+--- !u!58 &1453029865565247879
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639943855346603852}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &8880025990691290609
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639943855346603852}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &6256465325381307305
 PrefabInstance:
   m_ObjectHideFlags: 0
