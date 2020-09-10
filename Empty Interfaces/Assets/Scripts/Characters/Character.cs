@@ -7,7 +7,7 @@ public abstract class Character : MonoBehaviour
     public bool isReadyToShoot = false;
     public float timeBetweenShots;
     public int maxHP;
-    protected int hp;
+    public int hp;
     protected float lowCoolDown;
     protected float highCoolDown;
     protected float coolDownCopy;
@@ -20,6 +20,14 @@ public abstract class Character : MonoBehaviour
         hp = maxHP;
         coolDownCopy = timeBetweenShots;
         Debug.Log("START VALUE OF COPY = " + coolDownCopy);
+    }
+
+    protected void CheckIfAlive()
+    {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected virtual void ShootReadyCheck()

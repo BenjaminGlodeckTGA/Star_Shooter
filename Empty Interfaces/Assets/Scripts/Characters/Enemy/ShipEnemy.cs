@@ -8,5 +8,6 @@ public class ShipEnemy : Enemy
     void Update()
     {
         ShootReadyCheck();
+        CheckIfAlive();
     }
 }
