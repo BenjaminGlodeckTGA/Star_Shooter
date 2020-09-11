@@ -34,7 +34,7 @@ public class BulletProjectile : MonoBehaviour, IShootable
                 {
                     Debug.Log("ENEMY HIT");
                     // destroys projectile
-                    Destroy(gameObject);
+                    BulletManager.Instance.DestroyBullet(gameObject);
                     // damages character
                     other.gameObject.GetComponent<Enemy>().Hurt(1);
                 }
@@ -45,7 +45,7 @@ public class BulletProjectile : MonoBehaviour, IShootable
                 if (gameObject.name.Contains("Enemy"))
                 {
                     // destroys projectile
-                    Destroy(gameObject);
+                    BulletManager.Instance.DestroyBullet(gameObject);
                     // damages character
                     other.gameObject.GetComponent<Player>().Hurt(1);
                     Debug.Log("PLAYER HIT");

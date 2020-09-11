@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 6862962681029898830, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
         type: 3}
       propertyPath: m_Name
-      value: BulletProjectile
+      value: EnemyBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d9bb14660fdfbe4da284a1434fd9cb7, type: 3}

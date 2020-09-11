@@ -7,6 +7,7 @@ public class BulletManager : MonoBehaviour
 {
     public List<GameObject> bullets;
     public static BulletManager Instance;
+    public GameObject bulletPrefab;
 
     private void Awake()
     {

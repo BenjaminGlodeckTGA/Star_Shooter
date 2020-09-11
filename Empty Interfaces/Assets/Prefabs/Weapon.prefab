@@ -95,10 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b30fd9683bb6a4bbd6a82aa4e7905e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6862962681029898830, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
+  projectile: {fileID: 8392052646483877533, guid: 9954085e1cd09124d961fbe24e86efb6,
     type: 3}
   projectileSpawnPoint: {fileID: 5442458376913712560}
-  damage: 1
 --- !u!1 &7122781592550511394
 GameObject:
   m_ObjectHideFlags: 0

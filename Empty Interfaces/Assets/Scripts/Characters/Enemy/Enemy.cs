@@ -16,7 +16,7 @@ public class Enemy : Character
     //Cohesion Variables
     public float cohesionRadius;
     public float cohesionPriority;
-
+    public float cohesionRadiusMin;
     //Avoidance Variables
     public float avoidanceRadius;
     public float avoidancePriority;
@@ -37,14 +37,18 @@ public class Enemy : Character
 
     public void Update()
     {
+        ShootReadyCheck();
+        CheckIfAlive();
+    }
+
+    public void FixedUpdate()
+    {
         acceleration = Combine();
         acceleration = Vector3.ClampMagnitude(acceleration, maxAcceleration);
         velocity = velocity + acceleration * Time.deltaTime;
         velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
         position = position + velocity * Time.deltaTime;
         transform.position = position;
-        ShootReadyCheck();
-        CheckIfAlive();
     }
 
     protected Vector3 TowardsPlayer()
@@ -74,8 +78,17 @@ public class Enemy : Character
         }
         foreach (var enemy in neighbors)
         {
-            cohesionVector += enemy.position;
-            countEnemies++;
+            float dist = Vector3.Distance(enemy.position, gameObject.transform.position);
+            if (dist > cohesionRadiusMin)
+            {
+                cohesionVector += enemy.position;
+                countEnemies++;
+            }
+            if (dist < cohesionRadiusMin)
+            {
+                cohesionVector -= enemy.position;
+                countEnemies++;
+            }
         }
         if(countEnemies == 0)
         {
@@ -102,7 +115,7 @@ public class Enemy : Character
         foreach(var bullet in bullets)
         {
             float dist = Vector3.Distance(bullet.transform.position, gameObject.transform.position);
-            if (dist < avoidanceRadius)
+            if (dist < avoidanceRadius && bullet.name.Contains("PlayerBullet"))
             {
                 avoidanceVector += Dodge(bullet.transform.position);
                 countBullets++;
