@@ -98,6 +98,7 @@ MonoBehaviour:
   projectile: {fileID: 6862962681029898830, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
     type: 3}
   projectileSpawnPoint: {fileID: 5442458376913712560}
+  damage: 1
 --- !u!1 &7122781592550511394
 GameObject:
   m_ObjectHideFlags: 0
