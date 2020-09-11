@@ -48,14 +48,55 @@ public abstract class Character : MonoBehaviour
         isReadyToShoot = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Hurt(int damage)
     {
+<<<<<<< Updated upstream
         if (other.gameObject.CompareTag("Projectile"))
         {
             Destroy(other.gameObject);
             hp--;
             Debug.Log("CHARACTER HP: " + hp);
         }
+=======
+        hp -= damage;
+        Debug.Log("HP: " + hp);
+>>>>>>> Stashed changes
     }
+
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+
+    //}
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (gameObject.tag.Contains("Enemy"))
+    //    {
+    //        Debug.Log("ENEMY FOUND");
+    //        // if character collides with a projectile
+    //        if (other.gameObject.CompareTag("Projectile"))
+    //        {
+    //            Debug.Log("ENEMY HIT");
+    //            // destroys projectile
+    //            Destroy(other.gameObject);
+    //            // damages character
+    //            hp--;
+    //        }
+    //    }
+    //    if (gameObject.CompareTag("Player"))
+    //    {
+    //        // if character collides with a projectile
+    //        if (other.gameObject.tag.Contains("Enemy"))
+    //        {
+    //            // destroys projectile
+    //            Destroy(other.gameObject);
+    //            // damages character
+    //            hp--;
+
+    //            Debug.Log("PLAYER HIT");
+    //        }
+    //    }
+        
+    //}
 
 }
