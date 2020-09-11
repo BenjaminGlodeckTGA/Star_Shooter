@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3952183658952438096}
   - component: {fileID: 8133277715365302122}
   m_Layer: 5
-  m_Name: Meter
+  m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1064259499503315769}
   - component: {fileID: 1923439701852600942}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 5129367133122779900}
   - component: {fileID: 6820385167968949022}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

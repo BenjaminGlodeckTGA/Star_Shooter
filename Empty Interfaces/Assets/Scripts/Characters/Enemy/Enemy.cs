@@ -12,6 +12,7 @@ public class Enemy : Character
     //PlayerTarget Variables
     public Vector3 playerTarget;
     public float playerTargetPriority;
+    public float playerTargetRadius;
 
     //Cohesion Variables
     public float cohesionRadius;
@@ -56,6 +57,7 @@ public class Enemy : Character
         GameObject Player;
         Player = GameObject.FindGameObjectWithTag("Player");
         playerTarget = Player.transform.position;
+        
         playerTarget -= this.transform.position;
         return playerTarget.normalized;
     }
