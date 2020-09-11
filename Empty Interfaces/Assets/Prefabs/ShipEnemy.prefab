@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2115219887218394903}
   - component: {fileID: 8927640764797715554}
   - component: {fileID: 3867992249703759670}
-  - component: {fileID: 1453029865565247879}
   - component: {fileID: 7803828752997042730}
   - component: {fileID: 1280044155343719114}
+  - component: {fileID: 859995107}
   m_Layer: 0
   m_Name: ShipEnemy
   m_TagString: Enemy
@@ -113,22 +113,6 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
---- !u!58 &1453029865565247879
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3639943855346603852}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.7
 --- !u!50 &7803828752997042730
 Rigidbody2D:
   serializedVersion: 4
@@ -166,6 +150,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!61 &859995107
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3639943855346603852}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &6256465325381307305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,8 +246,14 @@ PrefabInstance:
     - target: {fileID: 1914534284801359360, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2104949503699771255, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2991562358022290556, guid: d774351e4e2ce044788ea7686f1b063e,
+        type: 3}
     - target: {fileID: 7122781592550511394, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
         type: 3}
       propertyPath: m_Name

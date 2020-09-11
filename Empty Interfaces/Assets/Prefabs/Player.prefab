@@ -100,7 +100,6 @@ MonoBehaviour:
   isReadyToShoot: 0
   timeBetweenShots: 0.25
   maxHP: 3
-  hp: 0
   randomModifier: 0
   speed: 4
 --- !u!61 &5839241971957912451
