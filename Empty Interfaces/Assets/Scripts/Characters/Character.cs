@@ -73,16 +73,46 @@ public abstract class Character : MonoBehaviour
         isReadyToShoot = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Hurt(int damage)
     {
-        // if character collides with a projectile
-        if (other.gameObject.CompareTag("Projectile"))
-        {
-            // destroys projectile
-            BulletManager.Instance.DestroyBullet(other.gameObject);
-            // damages character
-            hp--;
-        }
+        hp -= damage;
+        Debug.Log("HP: " + hp);
     }
+
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+
+    //}
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (gameObject.tag.Contains("Enemy"))
+    //    {
+    //        Debug.Log("ENEMY FOUND");
+    //        // if character collides with a projectile
+    //        if (other.gameObject.CompareTag("Projectile"))
+    //        {
+    //            Debug.Log("ENEMY HIT");
+    //            // destroys projectile
+    //            Destroy(other.gameObject);
+    //            // damages character
+    //            hp--;
+    //        }
+    //    }
+    //    if (gameObject.CompareTag("Player"))
+    //    {
+    //        // if character collides with a projectile
+    //        if (other.gameObject.tag.Contains("Enemy"))
+    //        {
+    //            // destroys projectile
+    //            Destroy(other.gameObject);
+    //            // damages character
+    //            hp--;
+
+    //            Debug.Log("PLAYER HIT");
+    //        }
+    //    }
+        
+    //}
 
 }
