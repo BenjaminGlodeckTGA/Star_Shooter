@@ -8,7 +8,6 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager Instance;
     public int numberOfEnemies;
     public float spawnRadius;
-    public float bounds;
 
     public List<Enemy> enemies;
 
@@ -27,16 +26,17 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         enemies = new List<Enemy>();
-        Spawn(shipEnemyPrefab, numberOfEnemies);
+
+        InvokeRepeating("SpawnShipEnemy", 2f, 2f);
 
         enemies.Add(FindObjectOfType<Enemy>());
     }
 
-    void Spawn(Transform prefab, int count)
+    void SpawnShipEnemy()
     {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < 2; i++)
         {
-            Instantiate(prefab, new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), 0), Quaternion.identity);
+            Instantiate(shipEnemyPrefab, new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(10, 15), 0), Quaternion.identity);
         }
     }
 
@@ -46,16 +46,13 @@ public class EnemyManager : MonoBehaviour
         
         foreach (var otherEnemy in enemies)
         {
-            Debug.Log("foreach work");
             if (otherEnemy == enemy)
             {
-                Debug.Log("continue");
                 continue;
             }
 
             if(Vector3.Distance(enemy.position, otherEnemy.position) <= radius)
             {
-                Debug.Log("conti");
                 neighborsFound.Add(otherEnemy);
             }
         }
