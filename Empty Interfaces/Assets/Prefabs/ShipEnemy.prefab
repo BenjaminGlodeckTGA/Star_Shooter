@@ -101,20 +101,15 @@ MonoBehaviour:
   isReadyToShoot: 0
   timeBetweenShots: 1
   maxHP: 3
-  hp: 0
   randomModifier: 0.25
   maxAcceleration: 1
   maxVelocity: 2
   playerTarget: {x: 0, y: 0, z: 0}
-  playerTargetPriority: 80
-  cohesionRadius: 200
-  cohesionPriority: 60
-  alignmentRadius: 0
-  alignmentPriority: 0
-  seperationRadius: 0
-  seperationPriority: 0
-  avoidanceRadius: 0
-  avoidancePriority: 0
+  playerTargetPriority: 20
+  cohesionRadius: 20
+  cohesionPriority: 10
+  avoidanceRadius: 5
+  avoidancePriority: 700
   position: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
@@ -237,6 +232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914534284801359360, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7122781592550511394, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
         type: 3}

@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5495135748988532137, guid: bc946ea00f168934786ae1263ee83c59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -357,21 +362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1687003124353418215, guid: 4f1f47780f5c7834eb3aedf197e70148,
-        type: 3}
-      propertyPath: spawnRadius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687003124353418215, guid: 4f1f47780f5c7834eb3aedf197e70148,
-        type: 3}
-      propertyPath: bounds
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687003124353418215, guid: 4f1f47780f5c7834eb3aedf197e70148,
-        type: 3}
-      propertyPath: numberOfEnemies
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3393506842119740926, guid: 4f1f47780f5c7834eb3aedf197e70148,
         type: 3}
       propertyPath: m_Name
@@ -455,6 +445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShipEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867992249703759670, guid: bc946ea00f168934786ae1263ee83c59,
+        type: 3}
+      propertyPath: avoidanceRadius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
         type: 3}

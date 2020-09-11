@@ -13,14 +13,8 @@ public class BulletProjectile : MonoBehaviour, IShootable
         rb.AddForce(transform.up * bulletSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        BulletManager.Instance.DestroyBullet(gameObject);
     }
 }

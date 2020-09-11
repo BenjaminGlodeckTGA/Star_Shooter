@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : Character
 {
+
+    Rigidbody2D rb;
     public float maxAcceleration;
     public float maxVelocity;
 
@@ -14,14 +16,6 @@ public class Enemy : Character
     //Cohesion Variables
     public float cohesionRadius;
     public float cohesionPriority;
-
-    //Alignment Variables
-    public float alignmentRadius;
-    public float alignmentPriority;
-
-    //Seperation Variables
-    public float seperationRadius;
-    public float seperationPriority;
 
     //Avoidance Variables
     public float avoidanceRadius;
@@ -34,6 +28,7 @@ public class Enemy : Character
     
     public override void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         position = transform.position;
         velocity = new Vector3(0, 0, 0);
         hp = maxHP;
@@ -63,7 +58,7 @@ public class Enemy : Character
 
     Vector3 Combine()
     {
-        Vector3 finalVec = cohesionPriority * Cohesion() + playerTargetPriority * TowardsPlayer();
+        Vector3 finalVec = cohesionPriority * Cohesion() + playerTargetPriority * TowardsPlayer() + avoidancePriority * Avoidance();
         return finalVec;
     }
 
@@ -74,7 +69,7 @@ public class Enemy : Character
         var neighbors = EnemyManager.Instance.GetNeighbors(this, cohesionRadius);
         if (neighbors.Count == 0)
         {
-            Debug.Log("n.count 0");
+            
             return cohesionVector;
         }
         foreach (var enemy in neighbors)
@@ -84,14 +79,46 @@ public class Enemy : Character
         }
         if(countEnemies == 0)
         {
-            Debug.Log("count 0");
+            
             return cohesionVector;
         }
 
         cohesionVector /= countEnemies;
         cohesionVector = cohesionVector - this.position;
 
-        Debug.Log("vec nor");
+        
         return cohesionVector.normalized;
+    }
+
+    Vector3 Avoidance()
+    {
+        Vector3 avoidanceVector = new Vector3();
+        var bullets = BulletManager.Instance.GetBullets();
+        int countBullets = 0;
+        if (bullets.Count == 0)
+        {
+            return avoidanceVector;
+        }
+        foreach(var bullet in bullets)
+        {
+            float dist = Vector3.Distance(bullet.transform.position, gameObject.transform.position);
+            if (dist < avoidanceRadius)
+            {
+                avoidanceVector += Dodge(bullet.transform.position);
+                countBullets++;
+            }
+        }
+        if (countBullets == 0)
+        {
+            return avoidanceVector;
+        }
+
+        return avoidanceVector.normalized;
+    }
+
+    Vector3 Dodge(Vector3 target)
+    {
+        Vector3 neededVelocity = (position - target).normalized * maxVelocity;
+        return  neededVelocity - velocity;
     }
 }

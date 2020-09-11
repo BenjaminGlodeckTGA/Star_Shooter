@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4392592964753965578}
   - component: {fileID: 1687003124353418215}
   - component: {fileID: 8375905574052632943}
+  - component: {fileID: 1093418117356277080}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -61,9 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipEnemyPrefab: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
     type: 3}
-  numberOfEnemies: 0
-  spawnRadius: 0
-  bounds: 0
+  numberOfEnemies: 10
+  spawnRadius: 10
   enemies: []
 --- !u!114 &8375905574052632943
 MonoBehaviour:
@@ -78,3 +78,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+--- !u!114 &1093418117356277080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393506842119740926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd05f35e6aa31045bc93ebf9076ee80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

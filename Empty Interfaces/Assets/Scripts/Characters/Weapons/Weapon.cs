@@ -28,6 +28,7 @@ public class Weapon : MonoBehaviour
 
     void Fire()
     {
-        Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        GameObject bullet = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        BulletManager.Instance.AddBullets(bullet);
     }
 }

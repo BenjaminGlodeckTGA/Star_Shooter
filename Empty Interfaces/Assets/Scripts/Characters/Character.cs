@@ -79,7 +79,7 @@ public abstract class Character : MonoBehaviour
         if (other.gameObject.CompareTag("Projectile"))
         {
             // destroys projectile
-            Destroy(other.gameObject);
+            BulletManager.Instance.DestroyBullet(other.gameObject);
             // damages character
             hp--;
         }
