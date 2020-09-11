@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public Image healthBar;
-    public Player player;
+    public Character character;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = (float)player.GetHP() / (float)player.maxHP;
+        healthBar.fillAmount = (float)character.GetHP() / (float)character.maxHP;
     }
 }
