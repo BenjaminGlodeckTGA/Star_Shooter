@@ -7,7 +7,7 @@ public abstract class Character : MonoBehaviour
     public bool isReadyToShoot = false;
     public float timeBetweenShots;
     public int maxHP;
-    public int hp;
+    protected int hp;
     protected float lowCoolDown;
     protected float highCoolDown;
     protected float coolDownCopy;
@@ -38,6 +38,11 @@ public abstract class Character : MonoBehaviour
     public int GetKills()
     {
         return kills;
+    }
+
+    public int GetHP()
+    {
+        return hp;
     }
 
     protected virtual void ShootReadyCheck()

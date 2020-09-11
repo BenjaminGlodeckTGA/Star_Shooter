@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         ScreenBoundary();
 
         //  if player is dead
-        if (player.GetComponent<Player>().hp <= 0)
+        if (player.GetComponent<Player>().GetHP() <= 0)
         {
             // load game over scene
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
