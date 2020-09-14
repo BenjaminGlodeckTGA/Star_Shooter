@@ -5,64 +5,64 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     public bool isReadyToShoot = false;
-    public float timeBetweenShots;
-    public int maxHP;
-    protected int hp;
-    protected float lowCoolDown;
-    protected float highCoolDown;
-    protected float coolDownCopy;
+    public float myTimeBetweenShots;
+    public int myMaxHP;
+    protected int myCurrentHP;
+    protected float myLowestCoolDown;
+    protected float myHighestCoolDown;
+    protected float myCoolDownCopy;
     protected bool isShooting = true;
-    public float randomModifier;
-    protected static int kills;
+    public float myRandomModifier;
+    protected static int ourKills;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
-        kills = 0;
-        hp = maxHP;
-        coolDownCopy = timeBetweenShots;
-        Debug.Log("START VALUE OF COPY = " + coolDownCopy);
+        ourKills = 0;
+        myCurrentHP = myMaxHP;
+        myCoolDownCopy = myTimeBetweenShots;
+        Debug.Log("START VALUE OF COPY = " + myCoolDownCopy);
     }
 
     protected void CheckIfAlive()
     {
         // if character is dead
-        if (hp <= 0)
+        if (myCurrentHP <= 0)
         {
             // destroys the character
             Destroy(gameObject);
-            kills++;
+            ourKills++;
         }
     }
 
     public int GetKills()
     {
-        return kills;
+        return ourKills;
     }
 
     public int GetHP()
     {
-        return hp;
+        return myCurrentHP;
     }
 
     protected virtual void ShootReadyCheck()
     {
-        timeBetweenShots -= Time.deltaTime; // timer is decreased
+        myTimeBetweenShots -= Time.deltaTime; // timer is decreased
 
         // generates a random cooldown timer based on the random modifier
-        lowCoolDown = coolDownCopy - (randomModifier * coolDownCopy);
-        highCoolDown = coolDownCopy + (randomModifier * coolDownCopy);
+        myLowestCoolDown = myCoolDownCopy - (myRandomModifier * myCoolDownCopy);
+        myHighestCoolDown = myCoolDownCopy + (myRandomModifier * myCoolDownCopy);
 
         // timer cant go below 0
-        if (timeBetweenShots <= 0)
+        if (myTimeBetweenShots <= 0)
         {
-            timeBetweenShots = 0;
+            myTimeBetweenShots = 0;
         }
 
         // if timer is 0
-        if (timeBetweenShots <= 0)
+        if (myTimeBetweenShots <= 0)
         {
-            timeBetweenShots = Random.Range(lowCoolDown, highCoolDown);
+            myTimeBetweenShots = Random.Range(myLowestCoolDown, myHighestCoolDown);
             // character shoots
             Shoot();
         }
@@ -73,46 +73,9 @@ public abstract class Character : MonoBehaviour
         isReadyToShoot = true;
     }
 
-    public void Hurt(int damage)
+    public void Hurt(int someDamage)
     {
-        hp -= damage;
-        Debug.Log("HP: " + hp);
+        myCurrentHP -= someDamage;
+        Debug.Log("HP: " + myCurrentHP);
     }
-
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (gameObject.tag.Contains("Enemy"))
-    //    {
-    //        Debug.Log("ENEMY FOUND");
-    //        // if character collides with a projectile
-    //        if (other.gameObject.CompareTag("Projectile"))
-    //        {
-    //            Debug.Log("ENEMY HIT");
-    //            // destroys projectile
-    //            Destroy(other.gameObject);
-    //            // damages character
-    //            hp--;
-    //        }
-    //    }
-    //    if (gameObject.CompareTag("Player"))
-    //    {
-    //        // if character collides with a projectile
-    //        if (other.gameObject.tag.Contains("Enemy"))
-    //        {
-    //            // destroys projectile
-    //            Destroy(other.gameObject);
-    //            // damages character
-    //            hp--;
-
-    //            Debug.Log("PLAYER HIT");
-    //        }
-    //    }
-        
-    //}
-
 }

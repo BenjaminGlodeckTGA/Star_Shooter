@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public GameObject projectile;
-    GameObject wielder;
-    public Transform projectileSpawnPoint;
+    public GameObject myProjectile;
+    GameObject myWielder;
+    public Transform myProjectileSpawnPoint;
 
     private void Start()
     {
         var parentPosition = transform.parent;
-        wielder = parentPosition.gameObject;
+        myWielder = parentPosition.gameObject;
     }
 
     private void Update()
     {
         // if wielder wants to shoot and is able to
-        if (wielder.GetComponent<Character>().isReadyToShoot)
+        if (myWielder.GetComponent<Character>().isReadyToShoot)
         {
             // weapon fires
             Fire();
             // wielder is no longer able to shoot
-            wielder.GetComponent<Character>().isReadyToShoot = false;
+            myWielder.GetComponent<Character>().isReadyToShoot = false;
         }
     }
 
     void Fire()
     {
-        GameObject bullet = Instantiate(projectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        GameObject bullet = Instantiate(myProjectile, myProjectileSpawnPoint.position, myProjectileSpawnPoint.rotation);
         
-        BulletManager.Instance.AddBullets(bullet);
+        BulletManager.ourInstance.AddBullets(bullet);
     }
 }

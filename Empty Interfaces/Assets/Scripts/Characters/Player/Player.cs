@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Player : Character
 {
-    float space;
-    public float speed = 4.0f;
+    float mySpace;
+    public float mySpeed = 4.0f;
 
     // Update is called once per frame
     void Update()
     {
-        space = Input.GetAxisRaw("Jump");
+        mySpace = Input.GetAxisRaw("Jump");
         // checks if player can shoot
         ShootReadyCheck();
         // moves player
@@ -19,19 +19,19 @@ public class Player : Character
 
     protected override void ShootReadyCheck()
     {
-        timeBetweenShots -= Time.deltaTime; // decrease timer
+        myTimeBetweenShots -= Time.deltaTime; // decrease timer
 
         // timer cant go below 0
-        if (timeBetweenShots <= 0)
+        if (myTimeBetweenShots <= 0)
         {
-            timeBetweenShots = 0;
+            myTimeBetweenShots = 0;
         }
 
         // if timer runs out and space is pressed
-        if (timeBetweenShots <= 0 && space != 0)
+        if (myTimeBetweenShots <= 0 && mySpace != 0)
         {
             // reset timer
-            timeBetweenShots = coolDownCopy;
+            myTimeBetweenShots = myCoolDownCopy;
             // and shoot
             Shoot();
         }
@@ -39,6 +39,6 @@ public class Player : Character
     public void Move()
     {
         //Makes Character move with key arrows
-        transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);
+        transform.Translate(mySpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0);
     }
 }

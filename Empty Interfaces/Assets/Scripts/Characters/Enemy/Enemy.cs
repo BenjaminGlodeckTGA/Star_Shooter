@@ -5,35 +5,35 @@ using UnityEngine;
 public class Enemy : Character
 {
 
-    Rigidbody2D rb;
-    public float maxAcceleration;
-    public float maxVelocity;
+    Rigidbody2D myRB;
+    public float myMaxAcceleration;
+    public float myMaxVelocity;
 
     //PlayerTarget Variables
-    public Vector3 playerTarget;
-    public float playerTargetPriority;
-    public float playerTargetRadius;
+    public Vector3 myPlayerTarget;
+    public float myPlayerTargetPriority;
+    public float myPlayerTargetRadius;
 
     //Cohesion Variables
-    public float cohesionRadius;
-    public float cohesionPriority;
-    public float cohesionRadiusMin;
+    public float myCohesionRadius;
+    public float myCohesionPriority;
+    public float myCohesionRadiusMin;
     //Avoidance Variables
-    public float avoidanceRadius;
-    public float avoidancePriority;
+    public float myAvoidanceRadius;
+    public float myAvoidancePriority;
 
-    public Vector3 position;
-    public Vector3 velocity;
-    public Vector3 acceleration;
+    public Vector3 myPosition;
+    public Vector3 myVelocity;
+    public Vector3 myAcceleration;
 
     
     public override void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        position = transform.position;
-        velocity = new Vector3(0, 0, 0);
-        hp = maxHP;
-        coolDownCopy = timeBetweenShots;
+        myRB = GetComponent<Rigidbody2D>();
+        myPosition = transform.position;
+        myVelocity = new Vector3(0, 0, 0);
+        myCurrentHP = myMaxHP;
+        myCoolDownCopy = myTimeBetweenShots;
     }
 
     public void Update()
@@ -44,27 +44,27 @@ public class Enemy : Character
 
     public void FixedUpdate()
     {
-        acceleration = Combine();
-        acceleration = Vector3.ClampMagnitude(acceleration, maxAcceleration);
-        velocity = velocity + acceleration * Time.deltaTime;
-        velocity = Vector3.ClampMagnitude(velocity, maxVelocity);
-        position = position + velocity * Time.deltaTime;
-        transform.position = position;
+        myAcceleration = Combine();
+        myAcceleration = Vector3.ClampMagnitude(myAcceleration, myMaxAcceleration);
+        myVelocity = myVelocity + myAcceleration * Time.deltaTime;
+        myVelocity = Vector3.ClampMagnitude(myVelocity, myMaxVelocity);
+        myPosition = myPosition + myVelocity * Time.deltaTime;
+        transform.position = myPosition;
     }
 
     protected Vector3 TowardsPlayer()
     {
         GameObject Player;
         Player = GameObject.FindGameObjectWithTag("Player");
-        playerTarget = Player.transform.position;
+        myPlayerTarget = Player.transform.position;
         
-        playerTarget -= this.transform.position;
-        return playerTarget.normalized;
+        myPlayerTarget -= this.transform.position;
+        return myPlayerTarget.normalized;
     }
 
     Vector3 Combine()
     {
-        Vector3 finalVec = cohesionPriority * Cohesion() + playerTargetPriority * TowardsPlayer() + avoidancePriority * Avoidance();
+        Vector3 finalVec = myCohesionPriority * Cohesion() + myPlayerTargetPriority * TowardsPlayer() + myAvoidancePriority * Avoidance();
         return finalVec;
     }
 
@@ -72,7 +72,7 @@ public class Enemy : Character
     {
         Vector3 cohesionVector = new Vector3();
         int countEnemies = 0;
-        var neighbors = EnemyManager.Instance.GetNeighbors(this, cohesionRadius);
+        var neighbors = EnemyManager.ourInstance.GetNeighbors(this, myCohesionRadius);
         if (neighbors.Count == 0)
         {
             
@@ -80,15 +80,15 @@ public class Enemy : Character
         }
         foreach (var enemy in neighbors)
         {
-            float dist = Vector3.Distance(enemy.position, gameObject.transform.position);
-            if (dist > cohesionRadiusMin)
+            float dist = Vector3.Distance(enemy.myPosition, gameObject.transform.position);
+            if (dist > myCohesionRadiusMin)
             {
-                cohesionVector += enemy.position;
+                cohesionVector += enemy.myPosition;
                 countEnemies++;
             }
-            if (dist < cohesionRadiusMin)
+            if (dist < myCohesionRadiusMin)
             {
-                cohesionVector -= enemy.position;
+                cohesionVector -= enemy.myPosition;
                 countEnemies++;
             }
         }
@@ -99,7 +99,7 @@ public class Enemy : Character
         }
 
         cohesionVector /= countEnemies;
-        cohesionVector = cohesionVector - this.position;
+        cohesionVector = cohesionVector - this.myPosition;
 
         
         return cohesionVector.normalized;
@@ -108,7 +108,7 @@ public class Enemy : Character
     Vector3 Avoidance()
     {
         Vector3 avoidanceVector = new Vector3();
-        var bullets = BulletManager.Instance.GetBullets();
+        var bullets = BulletManager.ourInstance.GetBullets();
         int countBullets = 0;
         if (bullets.Count == 0)
         {
@@ -117,7 +117,7 @@ public class Enemy : Character
         foreach(var bullet in bullets)
         {
             float dist = Vector3.Distance(bullet.transform.position, gameObject.transform.position);
-            if (dist < avoidanceRadius && bullet.name.Contains("PlayerBullet"))
+            if (dist < myAvoidanceRadius && bullet.name.Contains("PlayerBullet"))
             {
                 avoidanceVector += Dodge(bullet.transform.position);
                 countBullets++;
@@ -131,9 +131,9 @@ public class Enemy : Character
         return avoidanceVector.normalized;
     }
 
-    Vector3 Dodge(Vector3 target)
+    Vector3 Dodge(Vector3 aTarget)
     {
-        Vector3 neededVelocity = (position - target).normalized * maxVelocity;
-        return  neededVelocity - velocity;
+        Vector3 neededVelocity = (myPosition - aTarget).normalized * myMaxVelocity;
+        return  neededVelocity - myVelocity;
     }
 }

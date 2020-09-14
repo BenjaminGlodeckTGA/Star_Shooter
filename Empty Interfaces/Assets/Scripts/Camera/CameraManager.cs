@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Camera cam;
+    public Camera myCam;
 
     private void Awake()
     {
@@ -14,8 +14,8 @@ public class CameraManager : MonoBehaviour
 
     void GenerateCollidersAcrossScreen()
     {
-        Vector2 lDCorner = cam.ViewportToWorldPoint(new Vector3(0, 0f, cam.nearClipPlane));
-        Vector2 rUCorner = cam.ViewportToWorldPoint(new Vector3(1f, 1f, cam.nearClipPlane));
+        Vector2 lDCorner = myCam.ViewportToWorldPoint(new Vector3(0, 0f, myCam.nearClipPlane));
+        Vector2 rUCorner = myCam.ViewportToWorldPoint(new Vector3(1f, 1f, myCam.nearClipPlane));
         Vector2[] colliderpoints;
 
         //EdgeCollider2D upperEdge = new GameObject("upperEdge").AddComponent<EdgeCollider2D>();

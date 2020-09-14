@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
+    public void LoadScene(string someSceneName)
     {
         //Loads scene that is chosen in inspector
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(someSceneName);
     }
 }

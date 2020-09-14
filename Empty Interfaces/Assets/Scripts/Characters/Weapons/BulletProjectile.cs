@@ -2,31 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletProjectile : MonoBehaviour, IShootable
+public class BulletProjectile : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float bulletSpeed;
+    public Rigidbody2D myRB;
+    public float myBulletSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(transform.up * bulletSpeed);
+        myRB.AddForce(transform.up * myBulletSpeed);
     }
 
     private void OnBecameInvisible()
     {
-        BulletManager.Instance.DestroyBullet(gameObject);
+        BulletManager.ourInstance.DestroyBullet(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D anOther)
     {
-        if (other.isTrigger)
+        if (anOther.isTrigger)
         {
             return;
         }
         else
         {
-            if (other.gameObject.name.Contains("Enemy"))
+            if (anOther.gameObject.name.Contains("Enemy"))
             {
                 Debug.Log("ENEMY FOUND");
                 // if character collides with a projectile
@@ -34,20 +34,20 @@ public class BulletProjectile : MonoBehaviour, IShootable
                 {
                     Debug.Log("ENEMY HIT");
                     // destroys projectile
-                    BulletManager.Instance.DestroyBullet(gameObject);
+                    BulletManager.ourInstance.DestroyBullet(gameObject);
                     // damages character
-                    other.gameObject.GetComponent<Enemy>().Hurt(1);
+                    anOther.gameObject.GetComponent<Enemy>().Hurt(1);
                 }
             }
-            if (other.gameObject.name.Contains("Player"))
+            if (anOther.gameObject.name.Contains("Player"))
             {
                 // if character collides with a projectile
                 if (gameObject.name.Contains("Enemy"))
                 {
                     // destroys projectile
-                    BulletManager.Instance.DestroyBullet(gameObject);
+                    BulletManager.ourInstance.DestroyBullet(gameObject);
                     // damages character
-                    other.gameObject.GetComponent<Player>().Hurt(1);
+                    anOther.gameObject.GetComponent<Player>().Hurt(1);
                     Debug.Log("PLAYER HIT");
                 }
             }

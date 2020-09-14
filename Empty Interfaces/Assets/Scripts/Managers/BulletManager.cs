@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-    public List<GameObject> bullets;
-    public static BulletManager Instance;
-    public GameObject bulletPrefab;
+    public List<GameObject> myBullets;
+    public static BulletManager ourInstance;
+    public GameObject myBulletPrefab;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (ourInstance == null)
         {
-            Instance = this;
+            ourInstance = this;
         }
         else
         {
@@ -27,24 +27,24 @@ public class BulletManager : MonoBehaviour
     }
     public void AddBullets(GameObject bullet)
     {
-        bullets.Add(bullet);
+        myBullets.Add(bullet);
     }
 
-    public void DestroyBullet(GameObject bullet)
+    public void DestroyBullet(GameObject aBullet)
     {
-        foreach(var otherBullet in bullets.ToList())
+        foreach(var otherBullet in myBullets.ToList())
         {
-            if (otherBullet == bullet)
+            if (otherBullet == aBullet)
             {
-                bullets.Remove(bullet);
+                myBullets.Remove(aBullet);
             }
         }
-        Destroy(bullet);
+        Destroy(aBullet);
     }
    
     public List<GameObject> GetBullets ()
     {
-        return bullets;
+        return myBullets;
     }
 
 }

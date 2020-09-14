@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public Transform shipEnemyPrefab;
-    public static EnemyManager Instance;
-    public int numberOfEnemies;
-    public float spawnRadius;
+    public Transform myShipEnemyPrefab;
+    public static EnemyManager ourInstance;
+    public int myNumberOfEnemies;
+    public float mySpawnRadius;
 
-    public List<Enemy> enemies;
+    public List<Enemy> myEnemies;
 
     private void Awake()
     {
-        if(Instance == null)
+        if(ourInstance == null)
         {
-            Instance = this;
+            ourInstance = this;
         }
         else
         {
@@ -25,33 +25,33 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        enemies = new List<Enemy>();
+        myEnemies = new List<Enemy>();
 
         InvokeRepeating("SpawnShipEnemy", 2f, 2f);
 
-        enemies.Add(FindObjectOfType<Enemy>());
+        myEnemies.Add(FindObjectOfType<Enemy>());
     }
 
     void SpawnShipEnemy()
     {
         for (int i = 0; i < 2; i++)
         {
-            Instantiate(shipEnemyPrefab, new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(10, 15), 0), Quaternion.identity);
+            Instantiate(myShipEnemyPrefab, new Vector3(Random.Range(-mySpawnRadius, mySpawnRadius), Random.Range(10, 15), 0), Quaternion.identity);
         }
     }
 
-    public List<Enemy> GetNeighbors(Enemy enemy, float radius)
+    public List<Enemy> GetNeighbors(Enemy anEnemy, float someRadius)
     {
         List<Enemy> neighborsFound = new List<Enemy>();
         
-        foreach (var otherEnemy in enemies)
+        foreach (var otherEnemy in myEnemies)
         {
-            if (otherEnemy == enemy)
+            if (otherEnemy == anEnemy)
             {
                 continue;
             }
 
-            if(Vector3.Distance(enemy.position, otherEnemy.position) <= radius)
+            if(Vector3.Distance(anEnemy.myPosition, otherEnemy.myPosition) <= someRadius)
             {
                 neighborsFound.Add(otherEnemy);
             }
