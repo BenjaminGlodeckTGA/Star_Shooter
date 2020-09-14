@@ -63,7 +63,7 @@ MonoBehaviour:
   myShipEnemyPrefab: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
     type: 3}
   myNumberOfEnemies: 2
-  mySpawnRadius: 2
+  mySpawnRadius: 15
   myEnemies: []
 --- !u!114 &8375905574052632943
 MonoBehaviour:

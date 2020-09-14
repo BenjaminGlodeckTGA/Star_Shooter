@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 5431958323871469948, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
         type: 3}
       propertyPath: myBulletSpeed
-      value: 300
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6862962681029898830, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
         type: 3}

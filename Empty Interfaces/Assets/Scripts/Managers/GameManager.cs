@@ -26,6 +26,15 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            player.GetComponent<Player>().Hurt(1);
+            Destroy(collision.gameObject);
+        }
+    }
     public void ScreenBoundary()
     {
         player.transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, -Screen.width/100, Screen.width/100), player.transform.position.y, player.transform.position.z);

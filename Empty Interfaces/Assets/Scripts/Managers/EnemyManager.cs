@@ -27,17 +27,16 @@ public class EnemyManager : MonoBehaviour
     {
         myEnemies = new List<Enemy>();
 
-        InvokeRepeating("SpawnShipEnemy", 2f, 2f);
-
+        InvokeRepeating("SpawnShipEnemy", 2f, 4f);
         myEnemies.Add(FindObjectOfType<Enemy>());
     }
 
     void SpawnShipEnemy()
     {
-        for (int i = 0; i < 2; i++)
-        {
-            Instantiate(myShipEnemyPrefab, new Vector3(Random.Range(-mySpawnRadius, mySpawnRadius), Random.Range(10, 15), 0), Quaternion.identity);
-        }
+            for (int i = 0; i < 2; i++)
+            {
+                Instantiate(myShipEnemyPrefab, new Vector3(Random.Range(-mySpawnRadius, mySpawnRadius), Random.Range(10, 15), 0), Quaternion.identity);
+            }
     }
 
     public List<Enemy> GetNeighbors(Enemy anEnemy, float someRadius)

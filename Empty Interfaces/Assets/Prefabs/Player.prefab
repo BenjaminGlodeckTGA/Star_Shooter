@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReadyToShoot: 0
   myTimeBetweenShots: 0.5
-  myMaxHP: 3
+  myMaxHP: 5
   myRandomModifier: 0.25
   mySpeed: 6
 --- !u!61 &5839241971957912451

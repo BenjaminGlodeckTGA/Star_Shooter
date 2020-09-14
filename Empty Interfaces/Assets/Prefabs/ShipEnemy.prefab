@@ -101,15 +101,15 @@ MonoBehaviour:
   myTimeBetweenShots: 2
   myMaxHP: 1
   myRandomModifier: 0.5
-  myMaxAcceleration: 1
-  myMaxVelocity: 3
+  myMaxAcceleration: 0.5
+  myMaxVelocity: 2
   myPlayerTarget: {x: 0, y: 0, z: 0}
   myPlayerTargetPriority: 80
   myPlayerTargetRadius: 100
   myCohesionRadius: 10
   myCohesionPriority: 20
   myCohesionRadiusMin: 5
-  myAvoidanceRadius: 5
+  myAvoidanceRadius: 10
   myAvoidancePriority: 700
   myPosition: {x: 0, y: 0, z: 0}
   myVelocity: {x: 0, y: 0, z: 0}

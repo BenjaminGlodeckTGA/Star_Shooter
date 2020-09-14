@@ -57,7 +57,7 @@ public class Enemy : Character
         GameObject Player;
         Player = GameObject.FindGameObjectWithTag("Player");
         myPlayerTarget = Player.transform.position;
-        
+
         myPlayerTarget -= this.transform.position;
         return myPlayerTarget.normalized;
     }
@@ -134,6 +134,6 @@ public class Enemy : Character
     Vector3 Dodge(Vector3 aTarget)
     {
         Vector3 neededVelocity = (myPosition - aTarget).normalized * myMaxVelocity;
-        return  neededVelocity - myVelocity;
+        return  neededVelocity - myVelocity*2;
     }
 }
