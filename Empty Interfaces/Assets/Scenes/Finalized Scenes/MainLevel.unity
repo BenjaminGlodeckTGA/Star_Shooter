@@ -346,7 +346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907087658 stripped
 GameObject:
@@ -443,6 +443,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 536997449}
+    - target: {fileID: 8375905574052632943, guid: 4f1f47780f5c7834eb3aedf197e70148,
+        type: 3}
+      propertyPath: myCam
+      value: 
+      objectReference: {fileID: 536997449}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f1f47780f5c7834eb3aedf197e70148, type: 3}
 --- !u!1001 &1237184184
@@ -495,7 +500,7 @@ PrefabInstance:
     - target: {fileID: 5652954792405979472, guid: 5afefff02b107164dbb39d84145619bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5652954792405979472, guid: 5afefff02b107164dbb39d84145619bd,
         type: 3}
@@ -565,6 +570,11 @@ PrefabInstance:
     - target: {fileID: 8133277715365302122, guid: 5afefff02b107164dbb39d84145619bd,
         type: 3}
       propertyPath: character
+      value: 
+      objectReference: {fileID: 907087661}
+    - target: {fileID: 8133277715365302122, guid: 5afefff02b107164dbb39d84145619bd,
+        type: 3}
+      propertyPath: myCharacter
       value: 
       objectReference: {fileID: 907087661}
     m_RemovedComponents: []

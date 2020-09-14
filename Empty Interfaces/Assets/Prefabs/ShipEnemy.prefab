@@ -98,22 +98,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReadyToShoot: 0
-  timeBetweenShots: 4
-  maxHP: 1
-  randomModifier: 0.25
-  maxAcceleration: 1
-  maxVelocity: 2
-  playerTarget: {x: 0, y: 0, z: 0}
-  playerTargetPriority: 20
-  playerTargetRadius: 10
-  cohesionRadius: 20
-  cohesionPriority: 10
-  cohesionRadiusMin: 2
-  avoidanceRadius: 5
-  avoidancePriority: 700
-  position: {x: 0, y: 0, z: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  acceleration: {x: 0, y: 0, z: 0}
+  myTimeBetweenShots: 2
+  myMaxHP: 1
+  myRandomModifier: 0.5
+  myMaxAcceleration: 1
+  myMaxVelocity: 3
+  myPlayerTarget: {x: 0, y: 0, z: 0}
+  myPlayerTargetPriority: 80
+  myPlayerTargetRadius: 100
+  myCohesionRadius: 10
+  myCohesionPriority: 20
+  myCohesionRadiusMin: 5
+  myAvoidanceRadius: 5
+  myAvoidancePriority: 700
+  myPosition: {x: 0, y: 0, z: 0}
+  myVelocity: {x: 0, y: 0, z: 0}
+  myAcceleration: {x: 0, y: 0, z: 0}
 --- !u!50 &7803828752997042730
 Rigidbody2D:
   serializedVersion: 4
@@ -229,6 +229,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2991562358022290556, guid: d774351e4e2ce044788ea7686f1b063e,
         type: 3}
+    - target: {fileID: 2104949503699771255, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: myProjectile
+      value: 
+      objectReference: {fileID: 2991562358022290556, guid: d774351e4e2ce044788ea7686f1b063e,
+        type: 3}
+    - target: {fileID: 2104949503699771255, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: myProjectileSpawnPoint
+      value: 
+      objectReference: {fileID: 2113332946766970393}
     - target: {fileID: 7122781592550511394, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
         type: 3}
       propertyPath: m_Name
@@ -239,6 +250,12 @@ PrefabInstance:
 --- !u!4 &5495135748988532309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914534284801359356, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6256465325381307305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2113332946766970393 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5442458376913712560, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
     type: 3}
   m_PrefabInstance: {fileID: 6256465325381307305}
   m_PrefabAsset: {fileID: 0}

@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReadyToShoot: 0
-  timeBetweenShots: 0.5
-  maxHP: 3
-  randomModifier: 0
-  speed: 8
+  myTimeBetweenShots: 0.5
+  myMaxHP: 3
+  myRandomModifier: 0.25
+  mySpeed: 6
 --- !u!61 &5839241971957912451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -226,11 +226,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 2104949503699771255, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: myProjectile
+      value: 
+      objectReference: {fileID: 8392052646483877533, guid: 9954085e1cd09124d961fbe24e86efb6,
+        type: 3}
+    - target: {fileID: 2104949503699771255, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+        type: 3}
+      propertyPath: myProjectileSpawnPoint
+      value: 
+      objectReference: {fileID: 1244065372504151595}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df7e4530642ab34fb7c24fcf40d7fbc, type: 3}
 --- !u!4 &4635746744294383207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1914534284801359356, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 6540548081223672731}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1244065372504151595 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5442458376913712560, guid: 3df7e4530642ab34fb7c24fcf40d7fbc,
     type: 3}
   m_PrefabInstance: {fileID: 6540548081223672731}
   m_PrefabAsset: {fileID: 0}

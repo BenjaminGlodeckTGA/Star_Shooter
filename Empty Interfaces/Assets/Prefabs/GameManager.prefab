@@ -60,11 +60,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc135ddfffb7f48930cb98661d47af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipEnemyPrefab: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
+  myShipEnemyPrefab: {fileID: 8153944048791171119, guid: bc946ea00f168934786ae1263ee83c59,
     type: 3}
-  numberOfEnemies: 10
-  spawnRadius: 10
-  enemies: []
+  myNumberOfEnemies: 2
+  mySpawnRadius: 2
+  myEnemies: []
 --- !u!114 &8375905574052632943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198c4a25637f52644bfa2281b74b0f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  myCam: {fileID: 0}
 --- !u!114 &1093418117356277080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,5 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dd05f35e6aa31045bc93ebf9076ee80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: []
-  bulletPrefab: {fileID: 0}
+  myBullets: []
+  myBulletPrefab: {fileID: 6862962681029898830, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
+    type: 3}

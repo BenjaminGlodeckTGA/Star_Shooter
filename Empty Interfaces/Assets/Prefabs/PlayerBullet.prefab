@@ -62,10 +62,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5431958323871469948, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
+        type: 3}
+      propertyPath: myBulletSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6862962681029898830, guid: 2d9bb14660fdfbe4da284a1434fd9cb7,
         type: 3}
       propertyPath: m_Name
-      value: BulletProjectile
+      value: PlayerBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d9bb14660fdfbe4da284a1434fd9cb7, type: 3}
